@@ -19,6 +19,7 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV PATH /usr/share/elasticsearch/bin:$PATH
+RUN plugin -install mobz/elasticsearch-head
 COPY config /usr/share/elasticsearch/config
 
 VOLUME /usr/share/elasticsearch/data
